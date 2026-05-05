@@ -1,0 +1,121 @@
+INSERT INTO VILLE (Nom_Ville, Latitude, Longitude, Pays, Region) VALUES
+('Ville 1', 41.1253, 16.8667, 'Maroc', 'Region-3'),
+('Ville 2', 44.4939, 11.3428, 'Maroc', 'Region-2'),
+('Ville 3', 45.5389, 10.2203, 'Maroc', 'Region1'),
+('Ville 4', 37.5, 15.0903, 'Maroc', 'Region-4'),
+('Ville 5', 39.3, 16.25, 'Maroc', 'Region-5'),
+('Ville 6', 43.7714, 11.2542, 'Maroc', 'Region-6'),
+('Ville 7', 44.4111, 8.9328, 'Maroc', 'Region-7'),
+('Ville 8', 38.1936, 15.5542, 'Maroc', 'Region-4'),
+('Ville 9', 45.4669, 9.19, 'Maroc', 'Region1'),
+('Ville 10', 44.6458, 10.9257, 'Maroc', 'Region-2'),
+('Ville 11', 40.8333, 14.25, 'Maroc', 'Region-9'),
+('Ville 12', 45.4064, 11.8778, 'Maroc', 'Region-10'),
+('Ville 13', 38.1157, 13.3613, 'Maroc', 'Region-4'),
+('Ville 14', 44.8015, 10.328, 'Maroc', 'Region-2'),
+('Ville 15', 43.8808, 11.0966, 'Maroc', 'Region-6'),
+('Ville 16', 41.8931, 12.4828, 'Maroc', 'Region-11'),
+('Ville 17', 40.4711, 17.2431, 'Maroc', 'Region-3'),
+('Ville 18', 45.0792, 7.6761, 'Maroc', 'Region-12'),
+('Ville 19', 45.6503, 13.7703, 'Maroc', 'Region-13'),
+('Ville 20', 45.4397, 12.3319, 'Maroc', 'Region-10'),
+('Ville 21', 45.4386, 10.9928, 'Maroc', 'Region-10');
+INSERT INTO AGENCE_DE_VOYAGE (Cod_A, Site_web, Telephone, Adresse_Rue_A, Adresse_Code_Postal, VILLE_Nom_Ville, Adresse_Num_A, Adresse_Pays_A, mot_passe) 
+VALUES 
+(1, 'www.ag1.ma', '060-123456', 'Rue- Stre', 1234, 'Ville 1', 12, 'Maroc', 1234),
+(2, 'www.ag2.ma', '060-234567', 'Rue- Cora', 2345, 'Ville 2', 24, 'Maroc', 1234),
+(3, NULL, '060-345678', 'Rue- Lun', 3456, 'Ville 3', 38, 'Maroc', 1234),
+(4, 'www.ag4.ma', '050-23232', 'Rue- Lend', 2345, 'Ville 2', 11, 'Maroc', 1234),
+(5, 'www.ag5.ma', '060-89821', 'Rue- Rim', 1234, 'Ville 1', 5, 'Maroc', 1234),
+(6, 'www.ag6.ma', '060-77623', 'Rue- Cavr', 1234, 'Ville 1', 89, 'Maroc', 1234),
+(7, 'www.ag7.ma', '060-14521', 'Rue- Mart', 1234, 'Ville 1', 43, 'Maroc', 1234),
+(8, 'www.ag8.ma', '060-22121', 'Rue- UFoscol', 7777, 'Ville 4', 130, 'Maroc', 1234),
+(9, 'www.ag9.ma', '060-34012', 'Rue- Milop', 8989, 'Ville 5', 77, 'Maroc', 1234),
+(10, 'www.ag10.ma', '060-99881', 'Rue- Trent', 8989, 'Ville 5', 10, 'Maroc', 1234),
+(11, 'www.ag11.ma', '060-01001', 'Rue- Liat', 9876, 'Ville 6', 10, 'Maroc', 1234);
+INSERT INTO CHAMBRE (Cod_C, Etage, Surface, Type) VALUES
+(1, 1, 20, 'simple'),
+(2, 2, 30, 'double'),
+(3, 3, 40, 'suite'),
+(4, 2, 20, 'simple'),
+(5, 4, 17, 'single'),
+(6, 5, 25, 'double'),
+(7, 4, 25, 'double'),
+(8, 2, 45, 'suite'),
+(9, 6, 45, 'suite'),
+(10, 2, 35, 'suite'),
+(11, 4, 15, 'single'),
+(12, 8, 25, 'single'),
+(13, 3, 30, 'double');
+SET SQL_SAFE_UPDATES = 0;
+
+
+INSERT INTO EQUIPEMENT (Equipement) VALUES
+('balcony'),
+('minibar'),
+('jacuzzi'),
+('pay-tv');
+INSERT INTO HAS_EQUIPEMENT (EQUIPEMENT_Equipement, CHAMBRE_Cod_C) VALUES
+('balcony', 1),
+('balcony', 2),
+('jacuzzi', 2),
+('minibar', 2),
+('minibar', 3),
+('balcony', 4),
+('pay-tv', 5),
+('minibar', 11),
+('balcony', 11),
+('balcony', 6),
+('jacuzzi', 6),
+('balcony', 8),
+('jacuzzi', 8),
+('jacuzzi', 9),
+('minibar', 12),
+('minibar', 10),
+('pay-tv', 10),
+('balcony', 7),
+('pay-tv', 13);
+INSERT INTO ESPACES_DISPO (Espaces_Dispo) VALUES
+('bathroom'),
+('chambre à choucher'),
+('cuisine'),
+('dining room');
+INSERT INTO SUITE (CHAMBRE_Cod_C) VALUES
+(1),
+(2),
+(3),
+(4),
+(5),
+(6),
+(7),
+(8),
+(9),
+(10),
+(11),
+(12),
+(13);
+INSERT INTO HAS_ESPACES_DISPO (ESPACES_DISPO_Espaces_Dispo, SUITE_CHAMBRE_Cod_C) VALUES
+('bathroom', 3),
+('chambre à choucher', 3),
+('cuisine', 3),
+('cuisine', 4),
+('cuisine', 6),
+('cuisine', 13),
+('dining room', 3),
+('dining room', 7),
+('dining room', 5);
+INSERT INTO RESERVATION (CHAMBRE_Cod_C, Date_debut, Date_fin, Prix, AGENCE_DE_VOYAGE_Cod_A) VALUES
+(1, '2023-01-01', '2023-01-10', 1000, 1),
+(2, '2023-01-01', '2023-01-10', 1500, 2),
+(3, '2023-02-01', '2023-02-10', 800, 2),
+(13, '2023-03-01', '2023-03-10', 800, 2),
+(2, '2023-01-12', '2023-01-17', 560, 2),
+(3, '2023-03-13', '2023-03-17', 270, 2),
+(4, '2023-02-01', '2023-02-05', 300, 3),
+(3, '2023-02-06', '2023-02-07', 90, 3),
+(7, '2023-09-06', '2023-09-17', 1250, 3),
+(11, '2023-08-06', '2023-08-09', 950, 3),
+(11, '2023-04-16', '2023-04-19', 660, 5),
+(10, '2023-07-13', '2023-07-20', 1185, 5),
+(8, '2023-12-11', '2023-12-14', 710, 4);
+

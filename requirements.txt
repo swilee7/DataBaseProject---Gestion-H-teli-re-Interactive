@@ -1,0 +1,10 @@
+---
+
+### 2. Fichier `requirements.txt`
+Ce fichier liste les outils externes que vous avez utilisés, comme le connecteur MySQL et les bibliothèques de graphiques.
+
+```text
+streamlit
+mysql-connector-python
+pandas
+altair
